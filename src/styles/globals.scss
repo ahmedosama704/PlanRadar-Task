@@ -1,0 +1,317 @@
+@use '../styles/mixin.scss' as mixin;
+@use '../styles/Colors.scss' as Colors;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+html {
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+* {
+  outline: 0 !important;
+  box-sizing: border-box;
+}
+
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+  outline: 0;
+}
+
+body {
+  background-color: Colors.$lightOffWhite;
+  line-height: 1.5;
+  position: relative;
+  height: 100%;
+  font-weight: normal;
+  float: left;
+  width: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: 'Poppins', sans-serif;
+  &.noScroll {
+    @media (max-width: 767.98px) {
+      overflow: hidden !important;
+      position: fixed;
+    }
+  }
+}
+
+button {
+  text-transform: capitalize;
+  background: transparent;
+  outline: none !important;
+  border-color: transparent;
+  cursor: pointer;
+  cursor: pointer;
+  border-radius: 9px;
+  background: #fff;
+  border: 1px solid Colors.$mainColor1;
+  padding: 7px 5px;
+  width: 100%;
+  color: Colors.$mainColor1;
+  transition: all 1s;
+  position: relative;
+  line-height: 1.5;
+  @include mixin.for-phone-only {
+    font-size: 4vw;
+    padding: 4px 5px;
+    margin-top: 10px;
+  }
+
+  &:hover,
+  &:active {
+    background: Colors.$mainColor2;
+    color: #fff;
+  }
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border-radius: 9px;
+  padding: 15px 10px;
+  margin: 10px 0px;
+  background: #f9f9f9;
+  border: 1px solid #eee;
+}
+h1 {
+  font-size: 4.4vw;
+  color: Colors.$mainColor1;
+  margin: 10px 0px;
+
+  @include mixin.for-phone-only {
+    font-size: 8vw;
+  }
+}
+h2 {
+  font-size: 2.647vw;
+  color: Colors.$mainColor1;
+  margin: 10px 0px;
+
+  @include mixin.for-phone-only {
+    font-size: 7vw;
+  }
+}
+
+h3 {
+  font-size: 2.574vw;
+  margin: 10px 0px;
+
+  @include mixin.for-phone-only {
+    font-size: 6vw;
+  }
+}
+
+h4 {
+  font-size: 1.691vw;
+  margin: 10px 0px;
+
+  @include mixin.for-phone-only {
+    font-size: 5vw;
+  }
+}
+
+h5 {
+  font-size: 1.25vw;
+  margin: 10px 0px;
+  font-weight: 400;
+
+  @include mixin.for-phone-only {
+    font-size: 4.4vw;
+  }
+}
+
+h6 {
+  font-size: 0.9vw;
+  margin: 10px 0px;
+  font-weight: 400;
+
+  @include mixin.for-phone-only {
+    font-size: 3vw;
+  }
+}
+
+p {
+  font-size: 1.1vw;
+  @include mixin.for-phone-only {
+    font-size: 3.5vw;
+  }
+}
+
+a {
+  text-decoration: initial;
+  font-size: 1.32vw;
+  @include mixin.for-phone-only {
+    font-size: 4vw;
+  }
+}
+
+button:focus,
+a:focus {
+  outline: none;
+  box-shadow: initial !important;
+}
+
+section {
+  float: left;
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+.no_padding {
+  padding: 0 !important;
+}
+
+.mb20 {
+  margin-bottom: 20px !important;
+}
+
+.mb30 {
+  margin-bottom: 30px !important;
+}
+
+.mb40 {
+  margin-bottom: 40px !important;
+}
+
+.mt40 {
+  margin-top: 40px !important;
+
+  @include mixin.for-phone-only {
+    margin-top: 20px !important;
+    margin-bottom: 0;
+  }
+}
+
+.mt20 {
+  margin-top: 20px !important;
+}
+
+.relative {
+  position: relative;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+//
+// /* Let's get this party started */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  opacity: 0.5;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(173, 173, 173, 0.9);
+}
+.flexDev {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+.center {
+  text-align: center;
+}
+.flexContentCenter {
+  justify-content: center;
+  width: 100% !important;
+}
+// tickets table
+
+.ticketsList {
+  width: 100%;
+  height: 100vh;
+  background-color: #f8f8f8;
+  padding: 20px;
+}
+
+// loader
+
+.loader {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  &.modalLoader {
+    width: 50vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+  }
+  > div {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    color: inherit;
+    vertical-align: middle;
+    pointer-events: none;
+  }
+  .loading {
+    border-radius: 50%;
+    box-shadow: 0 1em 0 -0.2em currentcolor;
+    position: relative;
+    animation: loader-14 0.5s ease-in-out alternate infinite;
+    animation-delay: 0.32s;
+    top: -1em;
+    &:after,
+    &:before {
+      content: '';
+      position: absolute;
+      width: inherit;
+      height: inherit;
+      border-radius: inherit;
+      box-shadow: inherit;
+      animation: inherit;
+    }
+    &:before {
+      left: -1em;
+      animation-delay: 0.48s;
+    }
+    &:after {
+      right: -1em;
+      animation-delay: 0.16s;
+    }
+  }
+}
+
+@keyframes loader-14 {
+  0% {
+    box-shadow: 0 2em 0 -0.2em currentcolor;
+  }
+  100% {
+    box-shadow: 0 1em 0 -0.2em currentcolor;
+  }
+}

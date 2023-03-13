@@ -1,0 +1,27 @@
+@use '../../styles/mixin.scss' as mixin;
+
+.rowItem {
+  position: relative;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  background: #fff;
+  border-bottom: 1px solid #999;
+  @include mixin.for-phone-only {
+    display: none;
+  }
+  .subject {
+    width: 50%;
+  }
+  .status {
+    min-width: 15%;
+  }
+  .priority {
+    min-width: 15%;
+  }
+  h3 {
+    font-size: 1.5vw;
+  }
+}
