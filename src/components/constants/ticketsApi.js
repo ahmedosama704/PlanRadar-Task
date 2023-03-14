@@ -6,7 +6,7 @@ const ticketApi = axios.create({
 
 export const getTickets = async () => {
   const res = await ticketApi.get('/tickets');
-  return res.data;
+  return res.data.reverse();
 };
 
 export const addTicket = async (ticket) => {

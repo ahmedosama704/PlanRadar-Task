@@ -2,7 +2,9 @@ import React, { createContext, useState, useEffect } from 'react';
 export const MainContext = createContext();
 
 export const MainProvider = ({ children }) => {
-  const [showDetails, setShowDetails] = useState(false);
+  const [addNewTicket, setAddNewTicket] = useState(false);
+  const [showTicketDetails, setShowTicketDetails] = useState(false);
+  const [modal, setModal] = useState(false);
   const [ticketData, setTicketData] = useState({});
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
@@ -13,11 +15,15 @@ export const MainProvider = ({ children }) => {
   return (
     <MainContext.Provider
       value={{
-        showDetails,
-        setShowDetails,
         ticketData,
         setTicketData,
         isMobile,
+        addNewTicket,
+        setAddNewTicket,
+        showTicketDetails,
+        setShowTicketDetails,
+        modal,
+        setModal,
       }}
     >
       {children}

@@ -16,15 +16,21 @@ interface DataTypes {
 }
 const TicketRow: React.FC<RowType> = (props) => {
     const data = props.data;
-    const { setShowDetails, setTicketData } = useContext(MainContext);
+    const { setTicketData, setModal, setShowTicketDetails } = useContext(MainContext);
     const priorityBg = data.priority == "High" ? "red" : data.priority == "Medium" ? "orange" : "#00cfb2"
+
+    const showDetailsModal = () => {
+        setModal(true);
+        setTicketData(data);
+        setShowTicketDetails(true)
+    }
     return (
         <div className={Styles.rowItem} key={data.id} style={{ top: (props.itemPosition + props.index) * props.itemHeight }}>
             <div className={Styles.priority}><span style={{ background: priorityBg }}> {data.priority}</span></div>
-            <div className={Styles.subject}>  <img src='/images/to-do-list.png' /> {data.subject}</div>
+            <div className={Styles.subject}>    <img src='/images/to-do-list.png' /> [{data.id}] {data.subject}</div>
             <div className={Styles.status}>{data.status}</div>
             <div className={Styles.buttons}>
-                <button onClick={() => { setShowDetails(true); setTicketData(data) }}> Details </button>
+                <button onClick={showDetailsModal}> Details </button>
             </div>
         </div>
     )

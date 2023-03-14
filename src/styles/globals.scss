@@ -160,11 +160,6 @@ a:focus {
   box-shadow: initial !important;
 }
 
-section {
-  float: left;
-  width: 100%;
-}
-
 img {
   max-width: 100%;
 }
@@ -233,19 +228,33 @@ ul {
 ::-webkit-scrollbar-thumb:window-inactive {
   background: rgba(173, 173, 173, 0.9);
 }
-.flexDev {
+
+// header
+
+header {
+  margin-bottom: 20px;
+  height: 10vh;
   display: flex;
-  align-content: center;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: center;
+  align-content: center;
+  button {
+    width: 50%;
+    max-width: 220px;
+    background: green;
+    color: #fff;
+    min-height: 60px;
+    font-size: 1.2vw;
+    @include mixin.for-phone-only {
+      font-size: 5vw;
+    }
+  }
 }
+
 .center {
   text-align: center;
 }
-.flexContentCenter {
-  justify-content: center;
-  width: 100% !important;
-}
+
 // tickets table
 
 .ticketsList {

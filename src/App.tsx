@@ -6,16 +6,14 @@ import VirtualizedList from './components/virtualizedList/virtualizedList';
 import TableContent from './components/tableContent/tableContent';
 import TicketDetails from './components/ticketDetails/ticketDetails';
 import { MainContext } from './components/context/MainContext';
-import { useQueryClient } from 'react-query'
+import Header from './components/header/header';
+import AddNewModal from './components/addNewModal/addNewModal';
 function App() {
-    const { showDetails } = useContext(MainContext);
-
-    const webQueryClient = useQueryClient();
+    const { addNewTicket, showTicketDetails, } = useContext(MainContext);
     const {
         isLoading,
         data
     } = useQuery('tickets', getTickets);
-
 
     return (
         <div className="App">
@@ -27,8 +25,9 @@ function App() {
                 )
                 : (
                     <div className="ticketsList">
-
-                        {showDetails && <TicketDetails />}
+                        <Header />
+                        {addNewTicket && <AddNewModal />}
+                        {showTicketDetails && <TicketDetails />}
                         <TableContent />
                         <VirtualizedList data={data} />
                     </div>

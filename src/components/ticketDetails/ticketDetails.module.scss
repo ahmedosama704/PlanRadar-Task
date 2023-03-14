@@ -1,72 +1,40 @@
 @use '../../styles/mixin.scss' as mixin;
-.ticketDetails {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  z-index: 2;
-  left: 0;
-  top: 0;
-  .opacityBg {
-    position: absolute;
-    z-index: 1;
-    background-color: #000;
-    opacity: 0.3;
-    width: 100vw;
-    height: 100vh;
-    left: 0;
-    top: 0;
+.rowItem {
+  position: relative;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  background: #fff;
+  border-bottom: 1px solid #999;
+  .priority {
+    min-width: 30%;
+    span {
+      padding: 2px 10px;
+      color: #fff;
+    }
   }
-  .modal {
-    position: absolute;
-    z-index: 2;
-    background-color: #fff;
-    width: 50vw;
-    height: 100vh;
-    right: 0;
-    top: 0;
-    padding: 40px 20px;
-    overflow-y: auto;
+  .status {
+    min-width: 70%;
+  }
+}
+.buttons {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 40px 0px;
+  button {
+    max-width: 220px;
+    min-height: 30px;
+    line-height: 30px;
+    font-size: 1.1vw;
     @include mixin.for-phone-only {
-      width: 80vw;
-    }
-    .rowItem {
-      position: relative;
-      display: flex;
-      align-content: center;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      padding: 20px;
-      background: #fff;
-      border-bottom: 1px solid #999;
-      .priority {
-        min-width: 30%;
-        span {
-          padding: 2px 10px;
-          color: #fff;
-        }
-      }
-      .status {
-        min-width: 70%;
-      }
-    }
-    .buttons {
-      display: flex;
-      align-content: center;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      margin: 40px 0px;
-      button {
-        max-width: 220px;
-        min-height: 30px;
-        line-height: 30px;
-        font-size: 1.1vw;
-        @include mixin.for-phone-only {
-          font-size: 4vw;
-          max-width: 45%;
-        }
-      }
+      font-size: 4vw;
+      max-width: 45%;
     }
   }
 }

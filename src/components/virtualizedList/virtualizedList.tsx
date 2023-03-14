@@ -48,12 +48,9 @@ function VirtualizedList(props: Props) {
 
     return (
         <div className={Styles.VirtualizedList} style={{ height: viewportHeight, }} onScroll={onScroll}>
-            <div
-                style={{ height: containerHeight }}
-
-            >
+            <div style={{ height: containerHeight }}>
                 {data.slice(itemsToRender.startIndex, itemsToRender.endIndex + 1).map((item: any, index: number) =>
-                    <TicketRow data={item} itemPosition={itemsToRender.startIndex} index={index} itemHeight={itemHeight} />
+                    <TicketRow data={item} itemPosition={itemsToRender.startIndex} key={item.id} index={index} itemHeight={itemHeight} />
                 )}
             </div>
         </div>

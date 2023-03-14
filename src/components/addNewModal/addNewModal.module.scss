@@ -1,0 +1,49 @@
+@use '../../styles/mixin.scss' as mixin;
+
+.form {
+  label {
+    font-size: 1vw;
+    color: #888;
+    margin-top: 20px;
+    float: left;
+    width: 100%;
+    @include mixin.for-phone-only {
+      font-size: 4vw;
+    }
+  }
+  button {
+    max-width: 80%;
+    margin: 50px 0px;
+    min-height: 50px;
+    width: 180px;
+    &.save {
+      float: right;
+      background: green;
+      color: #fff;
+    }
+    &.close {
+      float: left;
+      border-color: red;
+      color: red;
+      &:hover {
+        color: #fff;
+        background: red;
+      }
+    }
+    @include mixin.for-phone-only {
+      float: initial !important;
+      display: table !important;
+      margin: 50px auto !important;
+    }
+  }
+
+  .message {
+    color: green;
+    font-weight: bold;
+  }
+  .alert {
+    color: red;
+    float: right;
+    margin-right: 20px;
+  }
+}
