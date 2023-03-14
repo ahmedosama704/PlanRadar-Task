@@ -25,7 +25,7 @@ These instructions will get you a copy of the project up and running on your loc
 1. Run the website: `yarn start || npm run start`
 2. Run the server: `yarn server || npm run server` 
 
-## I used Faker JS to export more than 15,000 fake ticket and added it to the current local api file.
-## I reversed the data to allow you to check the newest added ticket.
+#### I used Faker JS to export more than 15,000 fake ticket and added it to the current local api file.
+#### I reversed the data to allow you to check the newest added ticket.
 
 ## Have fun :)) 
