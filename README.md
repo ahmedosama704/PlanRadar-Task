@@ -1,4 +1,4 @@
-# PlanRadar-Task
+# Virtual rendering list
 
 This is a React Typescript website that show tasks tickets list. It includes features such as viewing ticket and add new ticket and edit ticket.
 The tickets list is bult with "virtual rendering" technique that allow you to renders large lists in a great performance, and the virtual list render was built from scratch.
